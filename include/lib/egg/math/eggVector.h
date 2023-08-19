@@ -9,14 +9,34 @@ class Vector3f {
 public:
     f32 x,y,z;
 public:
+    Vector3f() {}
     // may need change
     Vector3f(const Vector3f& other) {x = other.x, y = other.y, z = other.z;}
     // may need change
     f32 squaredLength() { return x*x + y*y + z*z; }
-    f32 length() { return Math<f32>::frsqrt(squaredLength()); }
+    f32 length() { return Math<f32>::sqrt(squaredLength()); }
     /* 8049bcc0 */ void normalise();
     /* 8049bd50 */ void setLength(Vector3f& src, f32 length);
     /* 8049be10 */ void setLength(f32 length);
+
+// Operators
+    Vector3f& operator*(f32 scale) {
+        x*=scale;
+        y*=scale;
+        z*=scale;
+    }
+// Seen in BBA LinkerMap
+// Vector3f(f32,f32,f32);
+// unkret vtx() const;
+// Vector3f cross(const Vector3f&) const;
+// Vector3f operator-() const;
+// Vector3f operator/(f32) const;
+// Vector3f operator+(const Vector3f&) const;
+// Vector3f operator-(const Vector3f&) const;
+// Vector3f operator*(f32) const;
+// Vector3f operator*(f32, const Vector3f&) const;
+// Vector3f& operator=(const nw4f::math::VEC3&);
+// ~Vector3f();
 
 public:
     /* 80674c30 */ static Vector3f zero;
