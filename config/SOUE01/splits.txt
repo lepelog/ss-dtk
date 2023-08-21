@@ -42,6 +42,12 @@ toBeSorted/bitwise_flag_helper.cpp:
 lib/rvl/CX/cx.c:
 	.text       start:0x803CEE90 end:0x803D0B20
 
+lib/nw4r/db/db_mapFile.cpp:
+	.text       start:0x804371B0 end:0x804373B4
+	.data       start:0x8056C5F0 end:0x8056C600
+	.sdata      start:0x80574E10 end:0x80574E28
+	.sbss       start:0x80576600 end:0x80576610
+
 lib/egg/core/eggArchive.cpp:
 	.text       start:0x80493510 end:0x80494254
 	.data       start:0x8056E820 end:0x8056E82C

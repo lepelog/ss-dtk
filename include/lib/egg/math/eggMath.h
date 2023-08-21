@@ -13,6 +13,10 @@ public:
     static T cos(T);
     static T acos(T);
     static T atan2(T);
+    static T inv(T t) {
+        return 1/t;
+    }
+    static bool isNan(T);
 };
 
 // f32 impls

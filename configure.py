@@ -28,40 +28,41 @@ LIBS = [
     #         ["lib/rvl/CX/cx.c", False],
     #     ],
     # },
-    # {
-    #     "lib": "NW4R",
-    #     "mw_version": "Wii/1.7", # FIXME: Change Compiler+flags Probably
-    #     "cflags": "-proc gekko -Cpp_exceptions off -RTTI off -O4,p -fp hard, -inline noauto, -enum int, -str reuse -I- -i include -i include/lib",
-    #     "host": False,
-    #     "objects": [
-    #     ],
-    # },
+    {
+        "lib": "NW4R",
+        "mw_version": "Wii/1.7", # FIXME: Change Compiler+flags Probably
+        "cflags": "-proc gekko -Cpp_exceptions off -RTTI off -O4,p -fp hard, -inline noauto, -enum int, -str reuse -I- -i include -i include/lib",
+        "host": False,
+        "objects": [
+            ["lib/nw4r/db/db_mapFile.cpp", False]
+        ],
+    },
     {
         "lib": "EGG",
         "mw_version": "Wii/1.7", # FIXME: Change Compiler+flags Probably
         "cflags": "-proc gekko -Cpp_exceptions off -RTTI off -O4,p -fp hard, -inline noauto, -enum int, -str reuse -I- -i include -i include/lib",
         "host": False,
         "objects": [
-            ["lib/egg/core/eggArchive.cpp", False], 
-            ["lib/egg/core/eggDvdFile.cpp", False], 
-            ["lib/egg/core/eggDvdRipper.cpp", False], 
-            ["lib/egg/core/eggStream.cpp", False], 
-            ["lib/egg/core/eggAllocator.cpp", False], 
-            ["lib/egg/core/eggHeap.cpp", False], 
-            ["lib/egg/core/eggExpHeap.cpp", False], 
-            ["lib/egg/core/eggFrmHeap.cpp", False], 
-            ["lib/egg/core/eggAssertHeap.cpp", False], 
-            ["lib/egg/core/eggDisposer.cpp", False], 
-            ["lib/egg/core/eggThread.cpp", False], 
-            ["lib/egg/core/eggUnk.cpp", False], 
-            ["lib/egg/core/eggSystem.cpp", False], 
-            ["lib/egg/core/eggDisplay.cpp", True], 
-            ["lib/egg/core/eggColorFader.cpp", False], 
-            ["lib/egg/core/eggAsyncDisplay.cpp", False], 
-            ["lib/egg/core/eggVideo.cpp", False], 
-            ["lib/egg/core/eggXfb.cpp", False], 
-            ["lib/egg/core/eggXfbManager.cpp", False], 
-            ["lib/egg/core/eggGraphicsFifo.cpp", False], 
+            ["lib/egg/core/eggArchive.cpp", False],
+            ["lib/egg/core/eggDvdFile.cpp", False],
+            ["lib/egg/core/eggDvdRipper.cpp", False],
+            ["lib/egg/core/eggStream.cpp", False],
+            ["lib/egg/core/eggAllocator.cpp", False],
+            ["lib/egg/core/eggHeap.cpp", False],
+            ["lib/egg/core/eggExpHeap.cpp", False],
+            ["lib/egg/core/eggFrmHeap.cpp", False],
+            ["lib/egg/core/eggAssertHeap.cpp", False],
+            ["lib/egg/core/eggDisposer.cpp", False],
+            ["lib/egg/core/eggThread.cpp", False],
+            ["lib/egg/core/eggUnk.cpp", False],
+            ["lib/egg/core/eggSystem.cpp", False],
+            ["lib/egg/core/eggDisplay.cpp", True],
+            ["lib/egg/core/eggColorFader.cpp", False],
+            ["lib/egg/core/eggAsyncDisplay.cpp", False],
+            ["lib/egg/core/eggVideo.cpp", False],
+            ["lib/egg/core/eggXfb.cpp", False],
+            ["lib/egg/core/eggXfbManager.cpp", False],
+            ["lib/egg/core/eggGraphicsFifo.cpp", False],
             ["lib/egg/core/eggController.cpp", False],
             ["lib/egg/math/eggMath.cpp", False],
             ["lib/egg/math/eggMatrix.cpp", False],
@@ -200,7 +201,7 @@ if args.map:
 if args.debug:
     ldflags += " -g"
 n.variable("ldflags", ldflags)
-mw_link_version = "GC/3.0"
+mw_link_version = Path("GC", "3.0")
 n.variable("mw_version", mw_link_version)
 if os.name == "nt":
     exe = ".exe"
@@ -388,6 +389,8 @@ if build_config_path.is_file():
                         object = object[0]
 
                     mw_version = options["mw_version"] or lib["mw_version"]
+                    if os.name == "nt":
+                        mw_version = mw_version.replace("/", "\\")
                     cflags = options["cflags"] or lib["cflags"]
                     used_compiler_versions.add(mw_version)
 
