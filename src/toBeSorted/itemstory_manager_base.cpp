@@ -31,6 +31,7 @@ void ItemStoryManagerBase::copyFlagsFromSave_Priv() {
     current->copyFromSaveFile(saved, 0, this->flagSizeMaybe);
 }
 
+/** 800bf3e0 */
 void ItemStoryManagerBase::init() {
     u16 *space = this->getSaveFlagSpace();
     if (space == nullptr || this->unkFlagsPtr == nullptr) {

@@ -1,3 +1,6 @@
+#ifndef ITEMSTORY_MANAGER_BASE_H
+#define ITEMSTORY_MANAGER_BASE_H
+
 #include <common.h>
 #include <toBeSorted/flag_space.h>
 #include <toBeSorted/unk_flag_stuff.h>
@@ -42,3 +45,5 @@ public:
     /** 0x0C */ UnkFlagStuff *unkFlagsPtr;
     /** 0x10 */ bool dirty;
 };
+
+#endif

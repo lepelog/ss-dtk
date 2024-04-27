@@ -1,13 +1,13 @@
-#ifndef ITEMFLAG_MANAGER_H
-#define ITEMFLAG_MANAGER_H
+#ifndef STORYFLAG_MANAGER_H
+#define STORYFLAG_MANAGER_H
 
 #include <toBeSorted/itemstory_manager_base.h>
 
-class ItemFlagManager: ItemStoryManagerBase {
+class StoryFlagManager: ItemStoryManagerBase {
 public:
-    FlagSpace itemFlags;
+    FlagSpace storyFlags;
 
-    ItemFlagManager();
+    StoryFlagManager();
     void copyFlagsFromSave() override;
     void setupUnkFlagsStuff() override;
     void onDirty() override;

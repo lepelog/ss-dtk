@@ -125,6 +125,9 @@ toBeSorted/bitwise_flag_helper.cpp:
 toBeSorted/itemstory_manager_base.cpp:
 	.text       start:0x800BF270 end:0x800BF694
 
+toBeSorted/storyflag_manager.cpp:
+	.text       start:0x800BF6A0 end:0x800BF760
+
 toBeSorted/itemflag_manager.cpp:
 	.text       start:0x800BF7C0 end:0x800BF880
 

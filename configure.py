@@ -276,6 +276,7 @@ config.libs = [
             Object(NonMatching, "toBeSorted/misc_flag_managers.cpp"),
             Object(Matching, "toBeSorted/itemstory_manager_base.cpp"),
             Object(NonMatching, "toBeSorted/itemflag_manager.cpp"),
+            Object(NonMatching, "toBeSorted/storyflag_manager.cpp"),
             Object(Matching, "toBeSorted/skipflag_manager.cpp"),
             Object(Matching, "c/c_list.cpp"),
             Object(Matching, "c/c_tree.cpp"),
