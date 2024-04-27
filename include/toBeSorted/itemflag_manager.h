@@ -11,6 +11,7 @@ public:
     void copyFlagsFromSave() override;
     void setupUnkFlagsStuff() override;
     void onDirty() override;
+    bool doCommit() override;
 };
 
 #endif

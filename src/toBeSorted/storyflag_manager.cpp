@@ -22,3 +22,18 @@ void StoryFlagManager::setupUnkFlagsStuff() {
 /** 800bf750 */
 void StoryFlagManager::onDirty() {
 }
+
+/** 800bf760 */
+bool StoryFlagManager::doCommit() {
+    if (this->dirty) {
+        ItemStoryManagerBase::doCommit_Priv();
+        ItemStoryManagerBase::FUN_800bf690();
+        return true;
+    }
+    return false;
+}
+
+/** 800bf7b0 */
+void StoryFlagManager::unsetFlag(u16 flag) {
+    ItemStoryManagerBase::unsetFlag(flag);
+}

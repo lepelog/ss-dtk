@@ -11,6 +11,8 @@ public:
     void copyFlagsFromSave() override;
     void setupUnkFlagsStuff() override;
     void onDirty() override;
+    void unsetFlag(u16 flag) override;
+    bool doCommit() override;
 };
 
 #endif

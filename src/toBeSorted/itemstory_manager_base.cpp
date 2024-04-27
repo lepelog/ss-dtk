@@ -119,6 +119,6 @@ void ItemStoryManagerBase::doCommit_Priv() {
 }
 
 /* 800bf690 */
-void FUN_800bf690() {
+void ItemStoryManagerBase::FUN_800bf690() {
 
 }

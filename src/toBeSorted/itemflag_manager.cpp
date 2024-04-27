@@ -22,3 +22,13 @@ void ItemFlagManager::setupUnkFlagsStuff() {
 /** 800bf870 */
 void ItemFlagManager::onDirty() {
 }
+
+/** 800bf880 */
+bool ItemFlagManager::doCommit() {
+    if (this->dirty) {
+        ItemStoryManagerBase::doCommit_Priv();
+        ItemStoryManagerBase::FUN_800bf690();
+        return true;
+    }
+    return false;
+}

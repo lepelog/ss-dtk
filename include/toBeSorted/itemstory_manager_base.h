@@ -15,7 +15,7 @@ public:
     /** 0x10 */ virtual void onDirty();
     /** 0x14 */ virtual void copyFlagsFromSave() = 0;
     /** 0x18 */ virtual void setupUnkFlagsStuff() = 0;
-    /** 0x1C */ virtual void doCommit() = 0;
+    /** 0x1C */ virtual bool doCommit() = 0;
     /** 0x20 */ virtual void setFlag(u16 flag);
     /** 0x24 */ virtual void unsetFlag(u16 flag);
     /** 0x28 */ virtual void setFlagOrCounterToValue();
