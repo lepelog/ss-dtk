@@ -137,7 +137,9 @@ public:
     void setFlag(u16 flag);
 };
 
+/** 0x805753F0 */
 EnemyDefeatManager *EnemyDefeatManager::sInstance = nullptr;
+/** 0x805A7AD8 */
 u16 EnemyDefeatManager::sEnemyDefeatFlags[4096] = {};
 
 /* 0x800BEAC0 */
