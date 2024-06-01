@@ -302,7 +302,7 @@ config.libs = [
             Object(Matching, "toBeSorted/counters/extra_wallet_counter.cpp"),
             Object(NonMatching, "toBeSorted/file_manager.cpp"),
             Object(NonMatching, "toBeSorted/save_manager.cpp"),
-            Object(NonMatching, "f/f_base.cpp"),
+            Object(Matching, "f/f_base.cpp"),
             Object(Matching, "f/f_list.cpp"),
             Object(Matching, "f/f_manager.cpp"),
             Object(Matching, "m/m_allocator.cpp"),

@@ -15,7 +15,7 @@ class fBase_c;
 /// @brief A list of fLiNdBa_c nodes.
 class fLiMgBa_c : public cListMg_c {
 public:
-    ~fLiMgBa_c() {}
+    // ~fLiMgBa_c() {}
     /**
      * @brief Counts the number of nodes of a given profile in this list.
      *
@@ -34,6 +34,14 @@ public:
     inline fLiNdBa_c *getLast() const {
         return (fLiNdBa_c *)cListMg_c::getLast();
     }
+};
+
+/// @brief Unofficial hack that wasn't in NSMBW to prevent fLiMgBa_c from
+/// having a dtor instantiated in f_list.cpp. This class is only used
+/// in f_manager.cpp
+class fLiMgBa_Search_c : public fLiMgBa_c {
+public:
+    ~fLiMgBa_Search_c();
 };
 
 #endif
