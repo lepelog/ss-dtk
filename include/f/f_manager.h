@@ -47,7 +47,7 @@ private:
     /* 805b8510 */ static fLiMgPTMF_c m_drawManage;    ///< A list of all the bases scheduled for drawing.
     /* 805b8524 */ static fLiMgPTMF_c m_deleteManage;  ///< A list of all the bases scheduled for deletion.
 
-    /* 805b8548 */ static fLiMgBa_c m_searchManage[8];
+    /* 805b8548 */ static fLiMgBa_Search_c m_searchManage[8];
 
     /* 80575bb8 */ static u32 m_StopProcInf;         ///< Which processes should be executed this frame.
     /* 80573fc0 */ static LOOP_PROC_e m_nowLoopProc; ///< The process ::mainLoop is currently in.

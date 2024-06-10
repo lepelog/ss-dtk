@@ -7,14 +7,18 @@ fLiMgPTMF_c fManager_c::m_executeManage(&fBase_c::executePack);
 fLiMgPTMF_c fManager_c::m_drawManage(&fBase_c::drawPack);
 fLiMgPTMF_c fManager_c::m_deleteManage(&fBase_c::deletePack);
 
-fLiMgBa_c fManager_c::m_searchManage[8];
+fLiMgBa_Search_c fManager_c::m_searchManage[8];
 
 u32 fManager_c::m_StopProcInf;
 fManager_c::LOOP_PROC_e fManager_c::m_nowLoopProc = CONNECT;
 
+fLiMgBa_Search_c::~fLiMgBa_Search_c() {
+
+}
+
 /* 802e28c0 */
 int fManager_c::getSearchTableNum() {
-    return reinterpret_cast<fBase_c *>(search_node.p_owner)->unique_ID & 7;
+    return static_cast<fBase_c *>(search_node.p_owner)->unique_ID & 7;
 }
 
 /* 802e28d0 */
